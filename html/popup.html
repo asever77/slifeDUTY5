@@ -14,64 +14,90 @@
 	<link rel="stylesheet" href="/css/ui.duty5.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+	<script src="/js/Chart.js"></script>
 </head>
 
 <body>
 	
 	<div class="wrapper" style="max-width: 512px; margin: auto">
-		<canvas id="chart-0" width="400" height="400"></canvas>
+		<canvas id="dutyGraph"></canvas>
 	</div>
-	<div class="toolbar">
-		<button onclick="togglePropagate(this)">Propagate</button>
-		<button onclick="toggleSmooth(this)">Smooth</button>
-		<button onclick="randomize(this)">Randomize</button>
-	</div>
-	<div id="chart-analyser" class="analyser"></div>
+
 
 
 	<script>
-		$(function(){
-			var ctx = $('#chart-0');
-			var myChart = new Chart(ctx, {
-				type: 'radar',
-				data: {
-					labels: ["보안", "봉사", "근로시간", "Green", "Purple", "Orange"],
-					datasets: [{
-						label: '# of Votes',
-						data: [12, 19, 3, 5, 2, 3],
-						backgroundColor: [
-							'rgba(255, 99, 132, 0.2)',
-							'rgba(54, 162, 235, 0.2)',
-							'rgba(255, 206, 86, 0.2)',
-							'rgba(75, 192, 192, 0.2)',
-							'rgba(153, 102, 255, 0.2)',
-							'rgba(255, 159, 64, 0.2)'
-						],
-						borderColor: [
-							'rgba(255,99,132,1)',
-							'rgba(54, 162, 235, 1)',
-							'rgba(255, 206, 86, 1)',
-							'rgba(75, 192, 192, 1)',
-							'rgba(153, 102, 255, 1)',
-							'rgba(255, 159, 64, 1)'
-						],
-						borderWidth: 1
-					}]
-				},
-				options: {
-					scales: {
-						yAxes: [{
-							ticks: {
-								beginAtZero:true
-							}
+		;(function($, win, doc, undefined) {
+			$(doc).ready(function(){
+				console.log('page ready after')
+
+				var chart = new Chart('dutyGraph', {
+					type: 'radar',
+					data: {
+						labels: ["보안", "봉사", "근로시간", "휴가", "기부"],
+						datasets: [{
+							backgroundColor: 'transparent',
+							borderColor: '#8f9ebd',
+							borderWidth: 1,
+							radius:0,
+							data: [50, 50, 50, 50, 50],
+							label: '가이드라인'
+						}, {
+							backgroundColor: 'rgba(101, 128, 229, 0.3)',
+							borderColor: '#6480e4',
+							borderWidth: 1,
+							radius:0,
+							data: [40, 70, 62, 32, 10],
+							label: '회사평균'
+						}, {
+							backgroundColor: 'rgba(52, 188, 201, 0.3)',
+							borderColor: '#199e7f',
+							borderWidth: 1,
+							radius:0,
+							data: [78, 65, 43, 80, 100],
+							label: '임직원본인'
 						}]
+					},
+					options: {
+						maintainAspectRatio: true,
+						spanGaps: false,
+						legend: {
+							position: 'bottom',
+							fullWidth: false,
+							labels : {
+								boxWidth:15,
+								fontSize:13,
+								fontColor:'#000',
+								padding:20,
+								
+							}
+						},
+						scale: {
+							gridLines: {
+								color: "#dde1ea",
+								lineWidth: 0.5
+							},
+							angleLines: {
+								display: true
+							},
+							ticks: {
+								beginAtZero: true,
+								min: 0,
+								max: 100,
+								stepSize: 25,
+								display:false
+							},
+							pointLabels: {
+								fontSize: 13,
+								fontColor: "#000"
+							}
+						}
 					}
-				}
-			});	
-		})
+				});
+
+
+
+			});
+		})(jQuery, window, document);
 	</script>
 
 </body>
