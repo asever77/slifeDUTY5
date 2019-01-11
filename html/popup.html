@@ -20,8 +20,8 @@
 <body>
 	
 	<div class="wrapper" style="width:640px;min-height:340px;border:1px solid #222;">
-		<div class="graph-wrap">
-			<canvas id="dutyGraph"></canvas>
+		<div class="graph-wrap" style="max-width: 325px; height: 330px"  aria-label="5대 의무현황" role="img">
+			<canvas id="dutyGraph" height="330px" width="325px"> </canvas>
 		</div>
 		<div class="graph-list">
 			<ul>
@@ -57,8 +57,6 @@
 				</li>
 			</ul>
 		</div>
-	</div>
-
 
 
 	<script>
@@ -66,69 +64,104 @@
 			$(doc).ready(function(){
 				console.log('page ready after')
 
-				var chart = new Chart('dutyGraph', {
-					type: 'radar',
-					data: {
-						labels: ["보안", "봉사", "근로시간", "휴가", "기부"],
-						datasets: [{
-							backgroundColor: 'transparent',
-							borderColor: '#8f9ebd',
-							borderWidth: 1,
-							radius:0,
-							data: [50, 50, 50, 50, 50],
-							label: '가이드라인'
-						}, {
-							backgroundColor: 'rgba(101, 128, 229, 0.3)',
-							borderColor: '#6480e4',
-							borderWidth: 1,
-							radius:0,
-							data: [40, 70, 62, 32, 10],
-							label: '회사평균'
-						}, {
-							backgroundColor: 'rgba(52, 188, 201, 0.3)',
-							borderColor: '#199e7f',
-							borderWidth: 1,
-							radius:0,
-							data: [78, 65, 43, 80, 100],
-							label: '임직원본인'
-						}]
+				//[보안,봉사,근로시간,휴가,기부]
+				var dutyOpt = {
+					guide : {
+						name:'가이드라인',
+						data:[55, 60, 58, 70, 68]
 					},
-					options: {
-						maintainAspectRatio: true,
-						spanGaps: false,
-						legend: {
-							position: 'bottom',
-							fullWidth: false,
-							labels : {
-								boxWidth:15,
-								fontSize:13,
-								fontColor:'#000',
-								padding:20
-								
-							}
+					company : {
+						name:'회사평균',
+						data:[40, 70, 62, 32, 10]
+					},
+					member : {
+						name:'임직원본인',
+						data:[78, 65, 43, 80, 100]
+					}
+				}
+				duty5Chart(dutyOpt);
+
+				function duty5Chart(opt){
+					var v_guide = opt.guide,
+						v_company = opt.company,
+						v_member = opt.member;
+
+					var dutychart = new Chart('dutyGraph', {
+						type: 'radar',
+						data: {
+							labels: ["보안", "봉사", "근로시간", "휴가", "기부"],
+							datasets: [{
+								backgroundColor: 'transparent',
+								borderColor: '#8f9ebd',
+								borderWidth: 1,
+								radius:0,
+								data: v_guide.data,
+								label: v_guide.name
+							}, {
+								backgroundColor: 'rgba(101, 128, 229, 0.3)',
+								borderColor: '#6480e4',
+								borderWidth: 1,
+								radius:0,
+								data: v_company.data,
+								label: v_company.name
+							}, {
+								backgroundColor: 'rgba(52, 188, 201, 0.3)',
+								borderColor: '#199e7f',
+								borderWidth: 1,
+								radius:0,
+								data: v_member.data,
+								label: v_member.name
+							}]
 						},
-						scale: {
-							gridLines: {
-								color: "#dde1ea",
-								lineWidth: 0.5
+						options: {
+							layout: {
+								padding: {
+									left: 0,
+									right: 0,
+									top: 10,
+									bottom: 10
+								}
 							},
-							angleLines: {
-								display: true
+							maintainAspectRatio: true,
+							spanGaps: false,
+							legend: {
+								position: 'bottom',
+								fullWidth: false,
+								
+								labels : {
+									boxWidth:15,
+									fontSize:13,
+									fontColor:'#000',
+									padding:20
+								}
 							},
-							ticks: {
-								beginAtZero: true,
-								min: 0,
-								max: 100,
-								stepSize: 25,
-								display:false
-							},
-							pointLabels: {
-								fontSize: 13,
-								fontColor: "#000"
+							
+							scale: {
+								gridLines: {
+									color: "#dde1ea",
+									lineWidth: 1,
+									borderDash:[10, 10]
+								},
+								angleLines: {
+									display: true
+								},
+								ticks: {
+									beginAtZero: true,
+									min: 0,
+									max: 100,
+									stepSize: 25,
+									display:false
+								},
+								pointLabels: {
+									fontSize: 13,
+									fontColor: "#000"
+								}
 							}
 						}
-					}
-				});
+					});
+				}
+
+				
 
 
 
