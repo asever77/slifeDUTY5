@@ -11,7 +11,7 @@
 
 	<title>삼성생명</title> 
 
-	<link rel="stylesheet" href="/css/ui.duty5.css">
+	<link rel="stylesheet" href="../css/ui.duty5.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
@@ -58,117 +58,5 @@
 				</li>
 			</ul>
 		</div>
-
-
-	<script>
-		;(function($, win, doc, undefined) {
-			$(doc).ready(function(){
-				console.log('page ready after')
-
-				//[보안,봉사,근로시간,휴가,기부]
-				var dutyOpt = {
-					guide : {
-						name:'가이드라인',
-						data:[55, 60, 58, 70, 68]
-					},
-					company : {
-						name:'회사평균',
-						data:[40, 70, 62, 32, 10]
-					},
-					member : {
-						name:'임직원본인',
-						data:[78, 65, 43, 80, 100]
-					}
-				}
-				duty5Chart(dutyOpt);
-
-				function duty5Chart(opt){
-					var v_guide = opt.guide,
-						v_company = opt.company,
-						v_member = opt.member;
-
-					var dutychart = new Chart('dutyGraph', {
-						type: 'radar',
-						data: {
-							labels: ["보안", "봉사", "근로시간", "휴가", "기부"],
-							datasets: [{
-								backgroundColor: 'transparent',
-								borderColor: '#8f9ebd',
-								borderWidth: 1,
-								radius:0,
-								data: v_guide.data,
-								label: v_guide.name
-							}, {
-								backgroundColor: 'rgba(101, 128, 229, 0.3)',
-								borderColor: '#6480e4',
-								borderWidth: 1,
-								radius:0,
-								data: v_company.data,
-								label: v_company.name
-							}, {
-								backgroundColor: 'rgba(52, 188, 201, 0.3)',
-								borderColor: '#199e7f',
-								borderWidth: 1,
-								radius:0,
-								data: v_member.data,
-								label: v_member.name
-							}]
-						},
-						options: {
-							layout: {
-								padding: {
-									left: 0,
-									right: 0,
-									top: 10,
-									bottom: 10
-								}
-							},
-							maintainAspectRatio: true,
-							spanGaps: false,
-							legend: {
-								position: 'bottom',
-								fullWidth: false,
-								
-								labels : {
-									boxWidth:15,
-									fontSize:13,
-									fontColor:'#000',
-									padding:20
-								}
-							},
-							
-							scale: {
-								gridLines: {
-									color: "#dde1ea",
-									lineWidth: 1,
-									borderDash:[10, 10]
-								},
-								angleLines: {
-									display: true
-								},
-								ticks: {
-									beginAtZero: true,
-									min: 0,
-									max: 100,
-									stepSize: 25,
-									display:false
-								},
-								pointLabels: {
-									fontSize: 13,
-									fontColor: "#000"
-								}
-							}
-						}
-					});
-				}
-
-				
-
-
-
-			});
-		})(jQuery, window, document);
-	</script>
-
 </body>
 </html>
