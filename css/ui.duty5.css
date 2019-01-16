@@ -2,7 +2,7 @@
 
 @font-face{
 	font-family:'SECGCL';
-	src: url('/font/SECGCM.woff') format('woff');
+	src: url('../font/SECGCM.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
 }
@@ -39,10 +39,12 @@ dt.lv-poor:before{background:#ff5d24;} /* 상황 심각 */
 .five-info-list li.no-line{border-top:0;}
 .five-info-list li:before{content:'';display:block;position:absolute;top:0;left:0;width:58px;height:58px;}
 .five-info-list li.ico-1:before{background-image:url(../images/ico_fivelist.png);background-position:0 -1px;}
-.five-info-list li.ico-2:before{background-image:url(../images/ico_fivelist.png);background-position:-60px -1px;}
+.five-info-list li.ico-2:before{background-image:url(../images/ico_fivelist.png);background-position:-60px -1px; left:-10px; width:48px;}
 .five-info-list li.ico-3:before{background-image:url(../images/ico_fivelist.png);background-position:-120px -1px;}
-.five-info-list li.ico-4:before{background-image:url(../images/ico_fivelist.png);background-position:-180px -1px;}
+.five-info-list li.ico-4:before{background-image:url(../images/ico_fivelist.png);background-position:-180px -1px; left:-10px; width:48px;}
 .five-info-list li.ico-5:before{background-image:url(../images/ico_fivelist.png);background-position:-240px -1px;}
+.five-info-list li.ico-2,
+.five-info-list li.ico-4{padding-left:50px;}
 .five-info-list li dt{position:relative;font-size:13px;color:#000;letter-spacing: -0.06em;padding-left:16px;font-weight:600;margin:10px 0 8px;}
 .five-info-list li dt:before{content:'';display:block;position: absolute;top:50%;left:-2px;width:12px;height:12px;margin-top:-6px;border-radius:50%;}
 
