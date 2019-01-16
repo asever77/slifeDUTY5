@@ -10803,7 +10803,7 @@ function watchForRender(node, handler) {
 	// https://github.com/chartjs/Chart.js/issues/4737
 	expando.reflow = !!node.offsetParent;
 
-	node.classList.add(CSS_RENDER_MONITOR);
+	//node.classList.add(CSS_RENDER_MONITOR);   //ie9 display issue 
 }
 
 function unwatchForRender(node) {
