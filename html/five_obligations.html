@@ -14,70 +14,67 @@
 	<link rel="stylesheet" href="/css/ui.duty5.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="/js/Chart.js"></script>
 </head>
 
 <body>
 	
-	<div class="pop-wrapper">
-		<div class="graph-wrap" style="max-width:325px; height:330px"  aria-label="5대 의무현황" role="img">
-			<canvas id="dutyGraph" height="330px" width="325px"></canvas>
+	
+		<div>
+			<div class="graph-list">
+				<ul>
+					<li>
+						<dl>
+							<dt class="dotc1">보안 <span>(100점 기준 )</span></dt>
+							<dd><span>99</span>점</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="dotc2">휴가 <span>(발생일 70% 기준)</span></dt>
+							<dd><span>80</span>%</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="dotc3">근로시간 <span>(주 45h 준수 기준)</span></dt>
+							<dd></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="dotc4">기부 <span>(사원 1万, 간부 2万 기준)</span></dt>
+							<dd><em>40h</em> / <span>38h</span></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="dotc5">봉사 <span>(月 1h 이상 기준)</span></dt>
+							<dd><em>30,000</em> / <span>20,000</span></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<!-- lv-good, lv-fair, lv-poor -->
-		<div class="graph-list">
-			<ul>
-				<li>
-					<dl>
-						<dt class="lv-good">보안(<span>100</span>점기준)</dt>
-						<dd><em>88</em> / <span>99</span></dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt class="lv-fair">봉사(月<span>1</span>h 이상)</dt>
-						<dd><em>3h</em> / <span>5h</span></dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt class="lv-poor n1 list">휴가(발생일 <span>70</span>%)</dt>
-						<dd><em>30%</em> / <span>50%</span></dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt class="lv-good">근로시간 (주<span>45</span>h 준수)</dt>
-						<dd><em>40h</em> / <span>38h</span></dd>
-					</dl>
-				</li>
-				<li>
-					<dl>
-						<dt class="lv-fair">기부 (사원 <span>1</span>万, 간부 <span>2</span>万)</dt>
-						<dd><em>30,000</em> / <span>20,000</span></dd>
-					</dl>
-				</li>
-			</ul>
-		</div>
-	</div>
+
 
 	<script>
 		;(function($, win, doc, undefined) {
 			$(doc).ready(function(){
 				console.log('page ready after')
 
-				// [보안, 봉사, 근로시간, 휴가, 기부]. 그래프는 100% 기준
+				//[보안,봉사,근로시간,휴가,기부]
 				var dutyOpt = {
 					guide : {
 						name:'가이드라인',
-						data:[100, 100, 100, 100, 100]
+						data:[55, 60, 58, 70, 68]
 					},
 					company : {
 						name:'회사평균',
-						data:[115, 110, 100, 80, 130]
+						data:[40, 70, 62, 32, 10]
 					},
 					member : {
 						name:'임직원본인',
-						data:[150, 50, 130, 50, 100]
+						data:[78, 65, 43, 80, 100]
 					}
 				}
 				duty5Chart(dutyOpt);
@@ -93,7 +90,7 @@
 							labels: ["보안", "봉사", "근로시간", "휴가", "기부"],
 							datasets: [{
 								backgroundColor: 'transparent',
-								borderColor: '#767676',
+								borderColor: '#8f9ebd',
 								borderWidth: 1,
 								radius:0,
 								data: v_guide.data,
@@ -117,7 +114,7 @@
 						options: {
 							layout: {
 								padding: {
-									left: 10,
+									left: 0,
 									right: 0,
 									top: 10,
 									bottom: 10
@@ -149,7 +146,7 @@
 								ticks: {
 									beginAtZero: true,
 									min: 0,
-									max: 150,
+									max: 100,
 									stepSize: 25,
 									display:false
 								},
@@ -161,6 +158,11 @@
 						}
 					});
 				}
+
+				
+
+
+
 			});
 		})(jQuery, window, document);
 	</script>
