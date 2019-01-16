@@ -10,30 +10,52 @@
 *{padding:0;margin:0;box-sizing: border-box;}
 ol,ul,li{list-style: none;}
 dl, dt, dd, em{font-style: normal;}
+strong, b{font-weight:500;}
+a{text-decoration: none;color:inherit;}
 html, body{font-family: "SECGCL","돋움",Dodum,AppleGothic,Tahoma,Helvetica,sans-serif;}
-/* .wrapper{display:block;position:relative;padding:20px 0;}
-.wrapper:after{content:'';display:block;clear:both;}
-.wrapper .graph-wrap{float:left;width:320px;}
-
-.wrapper .graph-list{float:right;width:300px;}
-.wrapper .graph-list dt{position:relative;font-size:13px;color:#000;font-weight:500;padding-left:18px;letter-spacing: -0.06em;}
-.wrapper .graph-list dt:before{content:'';display:block;position:absolute;top:50%;left:0;width:12px;height:12px;margin-top:-6px;border-radius: 50%;background:#ffb119;}
-.wrapper .graph-list dd{margin-top:12px;font-size:16px;color:#666;letter-spacing: 0.03em;}
-.wrapper .graph-list dd em{font-size:20px;color:#000;font-weight:500;}
-.wrapper .graph-list li{float:left;width:49%;margin-bottom:50px;}
-.wrapper .graph-list li.n5{width:100%;} */
 
 .pop-wrapper{display:block;position:relative;padding:20px 0;}
 .pop-wrapper:after{content:'';display:block;clear:both;}
 .pop-wrapper .graph-wrap{float:left;width:320px;}
 .pop-wrapper .graph-list{float:left;width:300px;margin-top:16px;margin-left:25px;}
-.pop-wrapper .graph-list dt{position:relative;font-size:13px;color:#000;font-weight:600;padding-left:18px;letter-spacing: -0.06em;}
-.pop-wrapper .graph-list dt:before{content:'';display:block;position:absolute;top:50%;left:0;width:12px;height:12px;margin-top:-6px;border-radius: 50%;background:#ffb119;}
+.pop-wrapper .graph-list dt{position:relative;font-size:13px;color:#000;font-weight:600;padding-left:18px;letter-spacing: -0.06em;line-height:1.2}
+.pop-wrapper .graph-list dt:before{content:'';display:block;position:absolute;top:50%;left:0;width:12px;height:12px;margin-top:-7px;border-radius: 50%;background:#ffb119;}
 .pop-wrapper .graph-list dd{margin-top:5px;font-size:16px;color:#666;padding-left:18px;letter-spacing: -0.06em;}
 .pop-wrapper .graph-list dd em{font-size:20px;color:#000;font-weight:600;}
 .pop-wrapper .graph-list li{float:left;width:49%;margin-bottom:50px;}
 .pop-wrapper .graph-list li.n5{width:100%;}
 
-.graph-list li dt.lv-good:before{background:#ffb119;} /* 상황 양호 */
-.graph-list li dt.lv-fair:before{background:#199e80;} /* 상황 경고 */
+.graph-list li dt.lv-good:before{background:#199e80; } /* 상황 양호 */
+.graph-list li dt.lv-fair:before{background:#ffb119;} /* 상황 경고 */
 .graph-list li dt.lv-poor:before{background:#ff5d24;} /* 상황 심각 */
+
+
+
+/* 5대의무 공지사항 */
+.five-info-wrap{width:490px;height:238px;padding:0 19px 0 17px}
+.five-info-wrap .tit{display:block;padding:20px 0 13px;;font-size:14px;color:#000;border-bottom:1px solid #666; letter-spacing: -0.06em;font-weight:600;}
+.five-info-wrap .tit span{margin-left:5px;font-size:13px;color:#666;font-weight:500;}
+.five-info-list {position:relative;overflow:hidden;padding-top:10px;}
+.five-info-list li{position:relative;float:left;width:50%;height: 58px;padding-left:60px;border-top:1px solid #e0e0e0;}
+.five-info-list li.no-line{border-top:0;}
+.five-info-list li:before{content:'';display:block;position:absolute;top:0;left:0;width:58px;height:58px;}
+.five-info-list li.ico-1:before{background-image:url(../images/ico_fivelist.png);background-position:0 -1px;}
+.five-info-list li.ico-2:before{background-image:url(../images/ico_fivelist.png);background-position:-60px -1px;}
+.five-info-list li.ico-3:before{background-image:url(../images/ico_fivelist.png);background-position:-120px -1px;}
+.five-info-list li.ico-4:before{background-image:url(../images/ico_fivelist.png);background-position:-180px -1px;}
+.five-info-list li.ico-5:before{background-image:url(../images/ico_fivelist.png);background-position:-240px -1px;}
+.five-info-list li dt{position:relative;font-size:13px;color:#000;letter-spacing: -0.06em;padding-left:16px;font-weight:600;margin:10px 0 8px;}
+.five-info-list li dt:before{content:'';display:block;position: absolute;top:50%;left:-2px;width:12px;height:12px;margin-top:-6px;border-radius:50%;}
+.five-info-list li dt.lv-good:before{background:#199e80;} /* 상황 양호 */
+.five-info-list li dt.lv-fair:before{background:#ffb119;} /* 상황 경고 */
+.five-info-list li dt.lv-poor:before{background:#ff5d24;} /* 상황 심각 */
+
+.five-info-list li dt span{color:#666;font-weight:500;}
+.five-info-list li dd{font-size:18px;color:#000;font-weight:600;}
+.five-info-list li dd em{margin-left:3px;font-size:14px;}
+.five-info-list .dot-list{position:relative;line-height:58px;padding-left: 0;}
+.five-info-list .dot-list::before{display:none;}
+.five-info-list .dot-list p{position:relative; padding-left:10px;font-weight: 600;font-size:14px;color:#000;letter-spacing: -0.06em;}
+.five-info-list .dot-list p:before{content:'';display:block;position:absolute;top:50%;left:2px;width:3px;height:3px;margin-top:-3px;background:#000}
+.five-info-list .dot-list .btn-more{display:block;position:absolute;top:50%;right:10px;width:80px;height:24px;margin-top:-12px;color:#fff;font-size:12px;letter-spacing:-0.06em;background:#0080ff;line-height:25px;padding-left:12px;border-radius: 5px;}
+.five-info-list .dot-list .btn-more:after{content:'';display:block;position:absolute;top:50%;right:10px;width:8px;height:10px;margin-top:-5px;background:url(../images/bul-btn-more-arrow.png) 0 0 no-repeat;}
