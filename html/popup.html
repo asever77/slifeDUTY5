@@ -19,9 +19,9 @@
 
 <body>
 	
-	<div class="wrapper" style="width:640px;min-height:340px;border:1px solid #222;">
-		<div class="graph-wrap" style="max-width: 325px; height: 330px"  aria-label="5대 의무현황" role="img">
-			<canvas id="dutyGraph" height="330px" width="325px"> </canvas>
+	<div class="wrapper" style="width:640px;min-height:340px;">
+		<div class="graph-wrap" aria-label="5대 의무현황" role="img">
+			<canvas id="dutyGraph" width="325px" height="330px"> </canvas>
 		</div>
 		<div class="graph-list">
 			<ul>
@@ -64,7 +64,7 @@
 			$(doc).ready(function(){
 				console.log('page ready after')
 
-				//[보안,봉사,근로시간,휴가,기부]
+				// [보안, 봉사, 근로시간, 휴가, 기부]. 그래프는 100% 기준
 				var dutyOpt = {
 					guide : {
 						name:'가이드라인',
