@@ -14,51 +14,49 @@
 	<link rel="stylesheet" href="/css/ui.duty5.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="/js/Chart.js"></script>
 </head>
 
 <body>
 	
-	<div class="pop-wrapper" style="width:660px;min-height:340px;border:1px solid #222;">
-		<div class="graph-wrap" style="max-width: 325px; height: 330px"  aria-label="5대 의무현황" role="img">
-			<canvas id="dutyGraph" height="330px" width="325px"> </canvas>
-		</div>
-		<div class="graph-list">
-			<ul>
-				<li class="n1">
-					<dl>
-						<dt class="lv-good">보안(<span>100</span>점기준)</dt>
-						<dd><em>88</em> / <span>99</span></dd>
-					</dl>
-				</li>
-				<li class="n2">
-					<dl>
-						<dt class="lv-good">봉사(月<span>1</span>h 이상)</dt>
-						<dd><em>3h</em> / <span>5h</span></dd>
-					</dl>
-				</li>
-				<li class="n3">
-					<dl>
-						<dt class="lv-fair n1 list">휴가(발생일 <span>70</span>%)</dt>
-						<dd><em>30%</em> / <span>50%</span></dd>
-					</dl>
-				</li>
-				<li class="n4">
-					<dl>
-						<dt class="lv-poor">근로시간 (주<span>45</span>h 준수)</dt>
-						<dd><em>40h</em> / <span>38h</span></dd>
-					</dl>
-				</li>
-				<li class="n5">
-					<dl>
-						<dt class="lv-poor">기부 (사원 <span>1</span>万, 간부 <span>2</span>万)</dt>
-						<dd><em>30,000</em> / <span>20,000</span></dd>
-					</dl>
-				</li>
-			</ul>
+	
+		<div>
+			<div class="graph-list">
+				<ul>
+					<li>
+						<dl>
+							<dt class="dotc1">보안 <span>(100점 기준 )</span></dt>
+							<dd><span>99</span>점</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="dotc2">휴가 <span>(발생일 70% 기준)</span></dt>
+							<dd><span>80</span>%</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="dotc3">근로시간 <span>(주 45h 준수 기준)</span></dt>
+							<dd></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="dotc4">기부 <span>(사원 1万, 간부 2万 기준)</span></dt>
+							<dd><em>40h</em> / <span>38h</span></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt class="dotc5">봉사 <span>(月 1h 이상 기준)</span></dt>
+							<dd><em>30,000</em> / <span>20,000</span></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
 		</div>
 
-		
+
 	<script>
 		;(function($, win, doc, undefined) {
 			$(doc).ready(function(){
@@ -116,7 +114,7 @@
 						options: {
 							layout: {
 								padding: {
-									left: 10,
+									left: 0,
 									right: 0,
 									top: 10,
 									bottom: 10

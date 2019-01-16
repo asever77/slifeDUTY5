@@ -3,20 +3,18 @@
 *{padding:0;margin:0;box-sizing: border-box;}
 ol,ul,li{list-style: none;}
 dl, dt, dd, em{font-style: normal;}
-html, body{font-family: "SECGCL","돋움",Dodum,AppleGothic,Tahoma,Helvetica,sans-serif;}
-.wrapper{display:block;position:relative;padding:20px 0;}
-.wrapper:after{content:'';display:block;clear:both;}
-.wrapper .graph-wrap{float:left;width:320px;margin-top:20px;}
-.wrapper .graph-list{float:right;width:300px;}
-.wrapper .graph-list dt{position:relative;font-size:13px;color:#000;font-weight:bold;padding-left:18px;letter-spacing: -0.06em;}
-.wrapper .graph-list dt:before{content:'';display:block;position:absolute;top:50%;left:0;width:12px;height:12px;margin-top:-6px;border-radius: 50%;background:#ffb119;}
-.wrapper .graph-list dd{margin-top:12px;font-size:16px;color:#666;letter-spacing: -0.06em;}
-.wrapper .graph-list dd em{font-size:20px;color:#000;font-weight:bold;}
-.wrapper .graph-list li{float:left;width:49%;margin-bottom:50px;}
-.wrapper .graph-list li.n5{width:100%;}
 
-.wrapper .graph-list li.n1 dt:before{background:#ffb119;}
-.wrapper .graph-list li.n2 dt:before{background:#199e80;}
-.wrapper .graph-list li.n3 dt:before{background:#199e80;}
-.wrapper .graph-list li.n4 dt:before{background:#ff5d24;}
-.wrapper .graph-list li.n5 dt:before{background:#ffb119;}
+.pop-wrapper{display:block;position:relative;padding:20px 0;}
+.pop-wrapper:after{content:'';display:block;clear:both;}
+.pop-wrapper .graph-wrap{float:left;width:320px;}
+.pop-wrapper .graph-list{float:left;width:300px;margin-top:16px;margin-left:25px;}
+.pop-wrapper .graph-list dt{position:relative;font-size:13px;color:#000;font-weight:600;padding-left:18px;letter-spacing: -0.06em;}
+.pop-wrapper .graph-list dt:before{content:'';display:block;position:absolute;top:50%;left:0;width:12px;height:12px;margin-top:-6px;border-radius: 50%;background:#ffb119;}
+.pop-wrapper .graph-list dd{margin-top:5px;font-size:16px;color:#666;padding-left:18px;letter-spacing: -0.06em;}
+.pop-wrapper .graph-list dd em{font-size:20px;color:#000;font-weight:600;}
+.pop-wrapper .graph-list li{float:left;width:49%;margin-bottom:50px;}
+.pop-wrapper .graph-list li.n5{width:100%;}
+
+.graph-list li dt.lv-good:before{background:#ffb119;} /* 상황 양호 */
+.graph-list li dt.lv-fair:before{background:#199e80;} /* 상황 경고 */
+.graph-list li dt.lv-poor:before{background:#ff5d24;} /* 상황 심각 */
