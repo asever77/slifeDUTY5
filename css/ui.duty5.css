@@ -14,6 +14,13 @@ strong, b{font-weight:500;}
 a{text-decoration: none;color:inherit;}
 html, body{font-family: "SECGCL","돋움",Dodum,AppleGothic,Tahoma,Helvetica,sans-serif;}
 
+
+
+
+
+
+
+/* s : css 추가 내용 ------------------------------------------------------------------------- */
 .pop-wrapper{display:block;position:relative;padding:20px 0; max-width:660px;min-height:340px;}
 .pop-wrapper:after{content:'';display:block;clear:both;}
 .pop-wrapper .graph-wrap{float:left;width:320px;}
@@ -28,7 +35,6 @@ html, body{font-family: "SECGCL","돋움",Dodum,AppleGothic,Tahoma,Helvetica,san
 dt.lv-good:before{background:#199e80; } /* 상황 양호 */
 dt.lv-fair:before{background:#ffb119;} /* 상황 경고 */
 dt.lv-poor:before{background:#ff5d24;} /* 상황 심각 */
-
 
 /* 5대의무 공지사항 */
 .five-info-wrap{width:490px;height:238px;padding:0 19px 0 17px}
@@ -47,8 +53,6 @@ dt.lv-poor:before{background:#ff5d24;} /* 상황 심각 */
 .five-info-list li.ico-4{padding-left:50px;}
 .five-info-list li dt{position:relative;font-size:13px;color:#000;letter-spacing: -0.06em;padding-left:16px;font-weight:600;margin:10px 0 8px;}
 .five-info-list li dt:before{content:'';display:block;position: absolute;top:50%;left:-2px;width:12px;height:12px;margin-top:-6px;border-radius:50%;}
-
-
 .five-info-list li dt span{color:#666;font-weight:500;}
 .five-info-list li dd{font-size:18px;color:#000;font-weight:600;}
 .five-info-list li dd em{margin-left:3px;font-size:14px;}
@@ -58,3 +62,4 @@ dt.lv-poor:before{background:#ff5d24;} /* 상황 심각 */
 .five-info-list .dot-list p:before{content:'';display:block;position:absolute;top:50%;left:2px;width:3px;height:3px;margin-top:-3px;background:#000}
 .five-info-list .dot-list .btn-more{display:block;position:absolute;top:50%;right:10px;width:80px;height:24px;margin-top:-12px;color:#fff;font-size:12px;letter-spacing:-0.06em;background:#0080ff;line-height:25px;padding-left:12px;border-radius: 5px;}
 .five-info-list .dot-list .btn-more:after{content:'';display:block;position:absolute;top:50%;right:10px;width:8px;height:10px;margin-top:-5px;background:url(../images/bul-btn-more-arrow.png) 0 0 no-repeat;}
+/* e : css 추가 내용 -------------------------------------------------------------------------  */
